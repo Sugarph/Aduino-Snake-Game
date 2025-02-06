@@ -50,13 +50,13 @@ void loop()
     buttonRightState = digitalRead(A0);
 
     if (buttonLeftState == LOW) {  
-      direction = (direction - 1 + 4) % 4;  // Turn left (counterclockwise)
-      lastButtonTime = millis();  // Update the last button press timestamp
+      direction = (direction - 1 + 4) % 4;  
+      lastButtonTime = millis();  
     }
 
     if (buttonRightState == LOW) {  
-      direction = (direction + 1) % 4;  // Turn right (clockwise)
-      lastButtonTime = millis();  // Update the last button press timestamp
+      direction = (direction + 1) % 4;  
+      lastButtonTime = millis();  
     }
   }
 
