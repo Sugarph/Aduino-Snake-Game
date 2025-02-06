@@ -12,7 +12,9 @@ A simple snake game that is played using buttons, and the score is displayed on 
 - 7-segment display
 
 ## Wiring Diagram:
-⚠️ **WARNING**: <span style="color:red">**DO NOT**</span> connect any power to the receiver board ⚠️
+⚠️ **WARNING**: <span style="color:red">**DO NOT**</span> connect any power to the receiver board. ⚠️
+
+⚠️ **Only connect power to main board** ⚠️
 
 Wiring diagram created using Fritzing.  
 <br><br>
