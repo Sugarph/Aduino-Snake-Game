@@ -45,29 +45,51 @@ void setup()
 
 void loop()  
 {
-  if (millis() - lastButtonTime > buttonDelay) {
-    buttonLeftState = digitalRead(A0); 
-    buttonRightState = digitalRead(A1);
-
-    if (buttonLeftState == LOW) {  
-      direction = (direction - 1 + 4) % 4;  
-      lastButtonTime = millis();  
+  if (!gameRunning) {
+    if (digitalRead(A0) == LOW || digitalRead(A1) == LOW) {
+      startGame();
+    }
+  } else {
+    if (millis() - gameStartTime > 30000) {  //Stop game after 30 sec
+      endGame();
+      delay(5000);
     }
 
-    if (buttonRightState == LOW) {  
-      direction = (direction + 1) % 4;  
-      lastButtonTime = millis();  
+    if (millis() - lastButtonTime > buttonDelay) {
+      buttonLeftState = digitalRead(A0); 
+      buttonRightState = digitalRead(A1);
+
+      if (buttonLeftState == LOW) {  
+        direction = (direction - 1 + 4) % 4;  
+        lastButtonTime = millis();  
+      }
+
+      if (buttonRightState == LOW) {  
+        direction = (direction + 1) % 4;  
+        lastButtonTime = millis();  
+      }
     }
-  }
 
-  // Move the snake after checking button presses
-  if (millis() - lastMoveTime > moveInterval) {
-    lastMoveTime = millis();
-    moveSnake();
-  }
+    if (millis() - lastMoveTime > moveInterval) {
+      lastMoveTime = millis();
+      moveSnake();
+    }
 
-  Display(); 
-  Serial.println(score);
+    Display(); 
+    Serial.println(score);
+  }
+}
+
+void startGame() {
+  gameRunning = true;
+  gameStartTime = millis();
+  Serial.println(100);  
+  resetGame();
+}
+
+void endGame() {
+  gameRunning = false;
+  Serial.println(200);  
 }
 
 void moveSnake() {
