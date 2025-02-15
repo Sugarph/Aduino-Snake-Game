@@ -46,8 +46,8 @@ void setup()
 void loop()  
 {
   if (millis() - lastButtonTime > buttonDelay) {
-    buttonLeftState = digitalRead(A1); 
-    buttonRightState = digitalRead(A0);
+    buttonLeftState = digitalRead(A0); 
+    buttonRightState = digitalRead(A1);
 
     if (buttonLeftState == LOW) {  
       direction = (direction - 1 + 4) % 4;  
