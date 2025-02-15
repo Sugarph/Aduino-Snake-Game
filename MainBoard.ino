@@ -9,11 +9,11 @@ int snakeY[64];
 
 int direction = 1;
 long lastMoveTime = 0;
-int moveInterval = 300;
+int moveInterval = 325;
 int buttonLeftState = 0;
 int buttonRightState = 0; 
 long lastButtonTime = 0;  
-int buttonDelay = 300;  
+int buttonDelay = 325;  
 int foodX;
 int foodY;
 int score = 0;
@@ -89,6 +89,7 @@ void moveSnake() {
 
   if (snakeX[0] == foodX && snakeY[0] == foodY) {
     score++;
+    snakeLength++;
     generateFood(); 
   }
 
