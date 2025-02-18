@@ -17,6 +17,8 @@ int buttonDelay = 325;
 int foodX;
 int foodY;
 int score = 0;
+int gameStartTime = 0;
+bool gameRunning;
 
 void setup()  
 {  
@@ -53,7 +55,7 @@ void loop()
     if (millis() - gameStartTime > 30000) {  //Stop game after 30 sec
       endGame();
       delay(5000);
-    }
+    }[]''
 
     if (millis() - lastButtonTime > buttonDelay) {
       buttonLeftState = digitalRead(A0); 
