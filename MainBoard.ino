@@ -55,7 +55,7 @@ void loop()
     if (millis() - gameStartTime > 30000) {  //Stop game after 30 sec
       endGame();
       delay(5000);
-    }[]''
+    }
 
     if (millis() - lastButtonTime > buttonDelay) {
       buttonLeftState = digitalRead(A0); 
@@ -83,6 +83,7 @@ void loop()
 }
 
 void startGame() {
+  gameStartTime = 0;
   gameRunning = true;
   gameStartTime = millis();
   Serial.println(100);  
