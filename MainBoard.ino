@@ -92,7 +92,8 @@ void startGame() {
 
 void endGame() {
   gameRunning = false;
-  Serial.println(200);  
+  Serial.println(200);
+  score = 0;
 }
 
 void moveSnake() {
