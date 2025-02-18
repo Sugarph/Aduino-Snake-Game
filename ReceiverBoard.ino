@@ -33,6 +33,7 @@ void loop() {
     } else if (receivedNumber == 200) {  // Signal for end
       endBeep();
       displayDigit(highestScore);  // Show highest score at the end
+      delay(1000);
     } else if (receivedNumber >= 0 && receivedNumber <= 9) {
       displayDigit(receivedNumber);
       if (receivedNumber > highestScore) {
