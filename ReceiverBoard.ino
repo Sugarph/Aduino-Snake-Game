@@ -1,5 +1,7 @@
 int segmentPins[7] = {2, 3, 4, 5, 6, 7, 8};
 int buzzerPin = 9; 
+int highestScore = 0;
+
 int digits[10][7] = {
   {1,1,1,1,1,1,0}, // 0
   {0,1,1,0,0,0,0}, // 1
@@ -19,7 +21,6 @@ void setup() {
   for (int i = 0; i < 7; i++) {
     pinMode(segmentPins[i], OUTPUT);
   }
-
   pinMode(buzzerPin, OUTPUT);
 }
 
@@ -31,8 +32,12 @@ void loop() {
       startBeep();
     } else if (receivedNumber == 200) {  // Signal for end
       endBeep();
-    } else {
+      displayDigit(highestScore);  // Show highest score at the end
+    } else if (receivedNumber >= 0 && receivedNumber <= 9) {
       displayDigit(receivedNumber);
+      if (receivedNumber > highestScore) {
+        highestScore = receivedNumber;  // Update highest score
+      }
     }
   }
 }
