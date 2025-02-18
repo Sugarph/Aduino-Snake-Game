@@ -19,3 +19,5 @@ A simple snake game that is played using buttons, and the score is displayed on 
 Wiring diagram created using Fritzing.  
 <br><br>
 ![Wiring Diagram](https://github.com/user-attachments/assets/f2f90276-4aae-40d7-9a9e-914b795a08d6)
+
+![Wiring Diagram](https://github.com/user-attachments/assets/c85fe674-0ea0-4ef0-bea6-9fd1022bdfc7)
